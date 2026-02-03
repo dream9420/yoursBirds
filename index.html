@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鹦鹉粮食配置系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦜 鹦鹉粮食配置系统</h1>
+            <p>为您的鹦鹉选择最适合的粮食配方</p>
+        </header>
+
+        <div class="bird-selector">
+            <h2>选择鹦鹉种类（可多选）</h2>
+            <div class="bird-buttons" id="birdButtons">
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="budgerigar">
+                    <span>虎皮鹦鹉</span>
+                </label>
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="cockatiel">
+                    <span>玄凤鹦鹉</span>
+                </label>
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="lovebird">
+                    <span>牡丹鹦鹉</span>
+                </label>
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="sun-conure">
+                    <span>太阳鹦鹉</span>
+                </label>
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="african-grey">
+                    <span>非洲灰鹦鹉</span>
+                </label>
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="amazon">
+                    <span>亚马逊鹦鹉</span>
+                </label>
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="macaw">
+                    <span>金刚鹦鹉</span>
+                </label>
+                <label class="bird-checkbox">
+                    <input type="checkbox" value="eclectus">
+                    <span>吸蜜鹦鹉</span>
+                </label>
+            </div>
+            <div class="selected-birds" id="selectedBirds">
+                <span class="label">已选择：</span>
+                <span class="birds-list" id="birdsList">请选择鹦鹉种类</span>
+            </div>
+        </div>
+
+        <div class="formula-selector">
+            <h2>选择配方方案</h2>
+            <div class="formula-options">
+                <label class="formula-option">
+                    <input type="radio" name="formula" value="young" checked>
+                    <span class="option-icon">🐣</span>
+                    <span class="option-text">幼鸟期配方</span>
+                    <span class="option-desc">0-6个月</span>
+                </label>
+                <label class="formula-option">
+                    <input type="radio" name="formula" value="adult">
+                    <span class="option-icon">🦅</span>
+                    <span class="option-text">成鸟期配方</span>
+                    <span class="option-desc">6个月以上</span>
+                </label>
+                <label class="formula-option">
+                    <input type="radio" name="formula" value="breeding">
+                    <span class="option-icon">❤️</span>
+                    <span class="option-text">繁殖期配方</span>
+                    <span class="option-desc">繁殖季节</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="total-input-section">
+            <h2>输入粮食总量</h2>
+            <div class="input-wrapper">
+                <input type="number" id="totalAmount" placeholder="请输入总量" min="1" step="0.1">
+                <select id="unit">
+                    <option value="kg" selected>千克</option>
+                    <option value="g">克</option>
+                </select>
+            </div>
+            <button class="calculate-btn" id="calculateBtn">计算配方</button>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <h2>📊 配方计算结果</h2>
+            <div class="result-info">
+                <div class="result-summary">
+                    <span class="summary-label">配方类型：</span>
+                    <span class="summary-value" id="resultFormulaType">幼鸟期配方</span>
+                </div>
+                <div class="result-summary">
+                    <span class="summary-label">适用鹦鹉：</span>
+                    <span class="summary-value" id="resultBirds">虎皮鹦鹉</span>
+                </div>
+                <div class="result-summary">
+                    <span class="summary-label">总量：</span>
+                    <span class="summary-value" id="resultTotal">100克</span>
+                </div>
+            </div>
+
+            <div class="food-categories">
+                <h3>鸟粮分类及重量</h3>
+                <div class="category-list" id="categoryList"></div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2>💡 饲养小贴士</h2>
+            <div class="tips-content" id="tipsContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
